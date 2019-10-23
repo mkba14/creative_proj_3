@@ -1,0 +1,15 @@
+.threeCol{
+    /*Safari*/
+    -webkit-column-width: 100%;
+    -webkit-column-count: 5;
+    -webkit-column-rule: 1px solid lightblue;
+    /*standard*/
+    column-count: 5;
+    column-width: 100%;
+    
+    column-rule: 1px solid lightblue;
+}
+
+ul.nobullet {
+    list-style-type: none;
+}
