@@ -13,11 +13,9 @@ let app = new Vue({
         category: 'planets',
         index: '1',
         loading: true,
-        
-        addedName: '',
-        addedComment: '',
-        comments: {},
-        
+
+        planet_index: 0,
+        planet_name: "Alderaan",
         planet_list: [],//, climate: "", terrain: ""},
     },
     
@@ -54,26 +52,34 @@ let app = new Vue({
                     let response = await axios.get(url + this.category) //+ '/' + this.index);
                     //const numPlanets = response.data.count;
                     while(response.data.next !== null){
-                        console.log('planets response = ')//, response.data.results);
-                        console.log(response.data.next);
+                        //console.log('planets response = ')//, response.data.results);
+                        //console.log(response.data.next);
                         response = await axios.get(response.data.next);
-                        console.log(response.data.results.length)
+                        //console.log(response.data.results.length)
                         for(let i = 0; i < response.data.results.length; i++){
                             //console.log(response.data.results[i]);//.name);
-                            console.log(response.data.results[i].name,' - ', response.data.results[i].terrain);
-                            console.log(response.data.results[i]);
+                            //console.log(response.data.results[i].name,' - ', response.data.results[i].terrain);
+                            //console.log(response.data.results[i]);
                             //this.planet_list[i].push({name: response.data.results[i].name});
                             this.planet_list.push(response.data.results[i]);
                             //console.log("h1",this.planet_list.name, "here")
                         }
                         
                     }
-                    
+                    this.loading_planets = false;
                 }
                 catch (error){
                     console.log(error);
                 }
 
+            },
+            planet() {
+               for (let i = 0; i < this.planet_list.length; i++) {
+                   if (this.planet_list[i].name === planet_name) {
+                       this.planet_index = i;
+                       return this.planet_index;
+                   }
+               } 
             }
             
 
