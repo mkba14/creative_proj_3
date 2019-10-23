@@ -15,16 +15,17 @@
         <div v-else>
             <h2>{{current.name}}</h2>
             <ul>
-                <li>Rotation Period: {{current.rotation_period}} standard hours</li>
-                <li>Orbital Period: {{current.orbital_period}} standard days</li>
-                <li>Diameter: {{current.diameter}} km</li>
-                <li>Climate: {{current.climate}}</li>
-                <li>Gravity: {{current.gravity}}</li>
-                <li>Terrain: {{current.terrain}}</li>
-                <li>Surface Water: {{current.surface_water}}%</li>
-                <li>Population: {{current.population}}</li>
+                <li>Rotation Period: {{current.planet_list[planet_index].rotation_period}} 
+                standard hours</li>
+                <li>Orbital Period: {{current.planet_list[planet_index].orbital_period}} standard days</li>
+                <li>Diameter: {{current.planet_list[planet_index].diameter}} km</li>
+                <li>Climate: {{current.planet_list[planet_index].climate}}</li>
+                <li>Gravity: {{current.planet_list[planet_index].gravity}}</li>
+                <li>Terrain: {{current.planet_list[planet_index].terrain}}</li>
+                <li>Surface Water: {{current.planet_list[planet_index].surface_water}}%</li>
+                <li>Population: {{current.planet_list[planet_index].population}}</li>
             </ul>
-            <p><i>Created {{current.created}}, edited {{current.edited}}</i></p>
+            <p><i>Created {{current.planet_list[planet_index].created}}, edited {{current.edited}}</i></p>
         </div>
 
 
