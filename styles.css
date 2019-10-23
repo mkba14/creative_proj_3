@@ -1,10 +1,10 @@
 .threeCol{
     /*Safari*/
     -webkit-column-width: 100%;
-    -webkit-column-count: 5;
+    -webkit-column-count: 3;
     -webkit-column-rule: 1px solid lightblue;
     /*standard*/
-    column-count: 5;
+    column-count: 3;
     column-width: 100%;
     
     column-rule: 1px solid lightblue;
@@ -12,4 +12,9 @@
 
 ul.nobullet {
     list-style-type: none;
+}
+
+body {
+    background-color: black;
+    color: #f5bf42;
 }

@@ -1,20 +1,31 @@
 <html>
 <head>
     <link rel="stylesheet" href="styles.css">
+    <link rel="stylesheet" hreft="collapse.css">
 </head>
 <body>
     <div id="app">
-        <button v-on:click="starwars">Planet List</button>
         
-        <h1>Planets</h1>
-        <div class="threeCol">
-            <ul>
-                <li v-for="item in planet_list">
-                    {{item.name}}
-                </li>
-            </ul>
+        <form v-on:submit.prevent="findPlanet">
+            <!--<input type="text" v-model="message">
+            <button type="submit">Get Planet Statistics</button>-->
+        </form>
+        <!--<button type="button" class="collapsible"></button>
+        -->
+        <button v-on:click="starwars">Retrieve Planets</button>
+        <button type="button" class="collapsible">Planet List</button>
+        <div id="content">
+            <h1>Planets</h1>
+            <div class="threeCol">
+                <ul class="nobullet">
+                    <li v-for="item in planet_list">
+                        {{item.name}}
+                        <!--{{item.url}}-->
+                    </li>
+                </ul>
+            </div>
+            <h1>End Planets</h1>
         </div>
-        <h1>End Planets</h1>
 
     </div>
     
@@ -22,5 +33,6 @@
     <script src="https://cdn.jsdelivr.net/npm/vue@2.6.2/dist/vue.js"></script>
   <script src="https://unpkg.com/axios/dist/axios.min.js"></script>
   <script src="script.js"></script>
+  <script src="collapse.js"></script>
 </body>
 </html>
