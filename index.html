@@ -2,20 +2,18 @@
 
 <head>
     <link rel="stylesheet" href="styles.css">
-    <link rel="stylesheet" hreft="collapse.css">
 </head>
 
 <body>
     <div id="app">
-
+        <!--
         <form v-on:submit.prevent="findPlanet">
             <!--<input type="text" v-model="message">
-            <button type="submit">Get Planet Statistics</button>-->
+            <button type="submit">Get Planet Statistics</button>
         </form>
-        <!--<button type="button" class="collapsible"></button>
-        -->
+          <!--
         <button v-on:click="starwars">Retrieve Planets</button>
-        <button type="button" class="collapsible">Planet List</button>
+        <button type="button">Planet List</button>
         <div id="content">
             <h1>Planets</h1>
             <div class="threeCol">
@@ -25,64 +23,66 @@
                         <br>{{item.diameter}} km 
                         <br>{{item.orbitalperiod}}
                         <!--{{item.url}}-->
-                    </li>
+        <!--    </li>
                 </ul>
 
                 <!-- 
                 <div vif="type===lallala">
                 -->
-            </div>
+        <!--</div>
+            
             <h1>End Planets</h1>
-            <p>
-                <!-- {{planet()}}-->
-            </p>
-            <table>
-                <thead>
-                    <th>Planet</th>
-                    <th>Rotation Period</th>
-                    <th>Oribital Period</th>
-                    <th>Diameter</th>
-                    <th>Climate</th>
-                    <th>Gravity</th>
-                    <th>Terrain</th>
-                    <th>Percentage of Surface Water</th>
-                    <th>Population</th>
-                </thead>
-                <tbody>
-                    <div v-for: "planet in planet_list">
-                        <tr>
-                            <td>
-                                {{planet.name}}
-                            </td>
-                            <td>
-                                {{planet.rotation_period}}
-                            </td>
-                            <td>
-                                {{planet.orbital_period}}
-                            </td>
-                            <td>
-                                {{planet.diameter}}
-                            </td>
-                            <td>
-                                {{planet.climate}}
-                            </td>
-                            <td>
-                                {{planet.gravity}}
-                            </td>
-                            <td>
-                                {{planet.terrain}}
-                            </td>
-                            <td>
-                                {{planet.surface_water}}%
-                            </td>
-                            <td>
-                                {{planet.population}}
-                            </td>
-                        </tr>
-                    </div>
-                </tbody>
-            </table>
-        </div>
+            -->
+
+
+
+
+        
+        <table>
+            <thead>
+                <th>Planet</th>
+                <th>Rotation Period</th>
+                <th>Oribital Period</th>
+                <th>Diameter</th>
+                <th>Climate</th>
+                <th>Gravity</th>
+                <th>Terrain</th>
+                <th>Percentage of Surface Water</th>
+                <th>Population</th>
+            </thead>
+            <tbody>
+                <tr v-for="planet in planet_list">
+                    <td>
+                        {{planet.name}}
+                    </td>
+                    <td v-if='planet.rotation_period !== "unknown"'>
+                        {{planet.rotation_period}}
+                    </td> <td v-else></td>
+                    <td v-if='planet.orbital_period !=="unknown"'>
+                        {{planet.orbital_period}}
+                    </td> <td v-else> </td>
+                    <td>
+                        {{planet.diameter}}
+                    </td>
+                    <td>
+                        {{planet.climate}}
+                    </td>
+                    <td>
+                        {{planet.gravity}}
+                    </td>
+                    <td>
+                        {{planet.terrain}}
+                    </td>
+                    <td>
+                        {{planet.surface_water}}%
+                    </td>
+                    <td>
+                        {{planet.population}}
+                    </td>
+                </tr>
+            </tbody>
+        </table>
+    </div>
 
     </div>
 
@@ -90,7 +90,6 @@
     <script src="https://cdn.jsdelivr.net/npm/vue@2.6.2/dist/vue.js"></script>
     <script src="https://unpkg.com/axios/dist/axios.min.js"></script>
     <script src="script.js"></script>
-    <script src="collapse.js"></script>
 </body>
 
 </html>
