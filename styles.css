@@ -1,0 +1,97 @@
+.threeCol{
+    /*Safari*/
+    -webkit-column-width: 100%;
+    -webkit-column-count: 3;
+    -webkit-column-rule: 1px solid lightblue;
+    /*standard*/
+    column-count: 3;
+    column-width: 100%;
+    
+    column-rule: 1px solid lightblue;
+}
+
+ul.nobullet {
+    list-style-type: none;
+}
+
+body {
+    background-color: black;
+    color: #f5bf42;
+}
+
+table {
+  border-collapse: collapse;
+  margin-right: 5%;
+}
+
+th {
+    height: 50px;
+    text-align: center;
+    vertical-align: center;
+    white-space: nowrap;
+}
+
+table, th, td {
+  border-right: 1px solid gray;
+  border-top: 1px solid black;/*white;*/
+}
+
+ td, th {
+    padding-top: 1%;
+    padding-bottom: 1%;
+ }
+ 
+ td{
+    /*background-color: white;*/
+    color:black;
+}
+
+th{
+    background-color: #f5bf42;
+    color: black;
+    font-size: large;
+}
+tr:nth-child(odd){
+    background-color: #f2f2f2;
+}
+tr:nth-child(even) {
+  background-color: white;
+}
+
+table{
+    margin: 5%;
+    text-align: center;
+}
+
+h1 {
+    text-align: center;
+    /*font-family: 'Lalezar', cursive;*/
+    font-family: 'Londrina Solid', cursive;
+}
+
+iframe{
+    align: center;
+    margin-top: 5%;
+}
+
+body{
+    margin-top: 5%;
+    font-family: 'Marvel', sans-serif;
+}
+
+footer{
+    text-align: center;
+     padding: 2%;   
+}
+
+footer a{
+    color: f5bf42;
+}
+
+footer a:hover{
+    color: white;
+}
+
+.small {
+    font-size: small;
+}
