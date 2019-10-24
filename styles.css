@@ -1,0 +1,36 @@
+.threeCol{
+    /*Safari*/
+    -webkit-column-width: 100%;
+    -webkit-column-count: 3;
+    -webkit-column-rule: 1px solid lightblue;
+    /*standard*/
+    column-count: 3;
+    column-width: 100%;
+    
+    column-rule: 1px solid lightblue;
+}
+
+ul.nobullet {
+    list-style-type: none;
+}
+
+body {
+    background-color: black;
+    color: #f5bf42;
+}
+
+table {
+  border-collapse: collapse;
+  width: 100%;
+}
+
+th {
+    height: 50px;
+    text-align: center;
+    vertical-align: center;
+}
+
+table, th, td {
+  border: 1px solid white;
+}
+
