@@ -12,7 +12,7 @@ let app = new Vue({
         },
         category: 'planets',
         index: '1',
-        loading: true,
+        loading_planets: true,
 
         planet_index: 0,
         planet_name: "Alderaan",
@@ -20,8 +20,8 @@ let app = new Vue({
     },
     
     created() {
-        this.starwars();
-        console.log('planets');
+        //this.starwars();
+        //console.log('planets');
         this.planets();
         
     },
@@ -35,17 +35,17 @@ let app = new Vue({
                         await axios.get(url + this.category +'/')
                             .catch(error => {this.number = this.max; 
                             });
-                    console.log("response\t", response);
-                    console.log("response.name\t",response.data.name);
+                    //console.log("response\t", response);
+                    //console.log("response.name\t",response.data.name);
                     //console.log("json\t\t", response.json[0]);
-                    console.log("body\t", response.body);
+                    //console.log("body\t", response.body);
                 } catch (error){
                     console.log(error);
                 }
             },
            
             async planets() {
-                console.log('planets')
+                //console.log('planets')
                 try{
                     url = "https://swapi.co/api/";
                     this.loading_planets = true;
@@ -66,12 +66,27 @@ let app = new Vue({
                         }
                         
                     }
+                    this.removeStandard();
+                    this.chgPopulation();
                     this.loading_planets = false;
                 }
                 catch (error){
                     console.log(error);
                 }
 
+            },
+            removeStandard(){
+                for(let i = 0; i < this.planet_list.length; i++){
+                    this.planet_list[i].gravity = this.planet_list[i].gravity.replace("standard", "");
+                    //console.log("here");
+                    //console.log(this.planet_list[i].name, this.planet_list[i].gravity);
+                }
+            },
+            
+            chgPopulation(){
+                for(let i = 0; i < this.planet_list.length; i++){
+                    this.planet_list[i].population = parseInt(this.planet_list[i].population).toExponential();
+                }
             },
             planet() {
                for (let i = 0; i < this.planet_list.length; i++) {
