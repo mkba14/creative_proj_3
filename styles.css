@@ -1,4 +1,4 @@
-.threeCol{
+.threeCol {
     /*Safari*/
     -webkit-column-width: 100%;
     -webkit-column-count: 3;
@@ -6,7 +6,7 @@
     /*standard*/
     column-count: 3;
     column-width: 100%;
-    
+
     column-rule: 1px solid lightblue;
 }
 
@@ -20,8 +20,10 @@ body {
 }
 
 table {
-  border-collapse: collapse;
-  margin-right: 5%;
+    border-collapse: collapse;
+    margin-right: 5%;
+    margin-left: 5%;
+    text-align: center;
 }
 
 th {
@@ -29,39 +31,38 @@ th {
     text-align: center;
     vertical-align: center;
     white-space: nowrap;
+    border-right: 1px solid black;
 }
 
-table, th, td {
-  border-right: 1px solid gray;
-  border-top: 1px solid black;/*white;*/
-}
+th, td {
 
- td, th {
+    /*white;*/
     padding-top: 1%;
     padding-bottom: 1%;
- }
- 
- td{
-    /*background-color: white;*/
-    color:black;
 }
 
-th{
+td {
+    color: black;
+    border-right: 1px solid gray;
+    border-top: 1px solid black;
+}
+
+th {
     background-color: #f5bf42;
     color: black;
     font-size: large;
 }
-tr:nth-child(odd){
+
+
+tr:nth-child(odd) {
     background-color: #f2f2f2;
 }
+
 tr:nth-child(even) {
-  background-color: white;
+    background-color: white;
 }
 
-table{
-    margin: 5%;
-    text-align: center;
-}
+
 
 h1 {
     text-align: center;
@@ -69,29 +70,48 @@ h1 {
     font-family: 'Londrina Solid', cursive;
 }
 
-iframe{
-    align: center;
+.gif {
     margin-top: 5%;
+    border-radius: 15px;
 }
 
-body{
+
+body {
     margin-top: 5%;
     font-family: 'Marvel', sans-serif;
 }
 
-footer{
+footer {
     text-align: center;
-     padding: 2%;   
+    padding-bottom: 2%;
 }
 
-footer a{
-    color: f5bf42;
+footer a {
+    color: #f5bf42;
 }
 
-footer a:hover{
+a:hover {
+    color: white;
+}
+
+p {
+    font-family: 'Marvel', sans-serif;
+    color: #f5bf42;
+
+}
+
+p.bottom_comments a {
+    color: #f5bf42;
+}
+
+p.bottom_comments a:hover {
     color: white;
 }
 
 .small {
     font-size: small;
+}
+
+.bottom_comments {
+    text-align: center;
 }
