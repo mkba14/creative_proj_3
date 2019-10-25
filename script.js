@@ -78,6 +78,7 @@ let app = new Vue({
                 this.planet_list[i].gravity = this.planet_list[i].gravity.replace("standard", "");
                 //console.log("here");
                 //console.log(this.planet_list[i].name, this.planet_list[i].gravity);
+
             }
         },
 

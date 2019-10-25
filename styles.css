@@ -1,5 +1,5 @@
 body {
-    margin: 5%;
+    margin-top: 5%;
     /*font-family: 'Marvel', sans-serif;*/
     background-color: black;
     background-image: url("images/flickr_stars.jpg");
@@ -8,9 +8,18 @@ body {
 
 }
 
+h1 {
+    text-align: center;
+    /*font-family: 'Lalezar', cursive;*/
+    font-family: 'Londrina Solid', cursive;
+}
+
 table {
     border-collapse: collapse;
     text-align: center;
+    margin-left: 5%;
+    margin-right: 5%;
+    
 }
 
 thead {
@@ -19,6 +28,11 @@ thead {
     background-color: #f5bf42;
     color: black;
     font-size: large;
+}
+
+.incog{
+    color: #f5bf42;
+    background-color: #f5bf42;
 }
 
 tbody {
@@ -51,14 +65,6 @@ tbody tr:nth-child(even) {
     background-color: white;
 }
 
-
-
-h1 {
-    text-align: center;
-    /*font-family: 'Lalezar', cursive;*/
-    font-family: 'Londrina Solid', cursive;
-}
-
 .gif {
     margin-top: 3%;
     font-family: 'Quantico', sans-serif;
@@ -66,20 +72,12 @@ h1 {
     width: 100%;
 }
 
-
-
-footer {
-    background-color: black;
-    text-align: center;
-    padding-bottom: 2%;
-}
-
-footer a {
-    color: #f5bf42;
-}
-
 a:hover {
     color: white;
+}
+
+a {
+    color: #9c7a2d;
 }
 
 p {
@@ -103,4 +101,15 @@ p.bottom_comments a:hover {
 
 .bottom_comments {
     text-align: center;
+}
+
+footer {
+    background-color: black;
+    text-align: center;
+    padding-top: 2%;
+    padding-bottom: 2%;
+}
+
+footer a {
+    color: #f5bf42;
 }
