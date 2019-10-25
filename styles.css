@@ -1,22 +1,10 @@
-.threeCol {
-    /*Safari*/
-    -webkit-column-width: 100%;
-    -webkit-column-count: 3;
-    -webkit-column-rule: 1px solid lightblue;
-    /*standard*/
-    column-count: 3;
-    column-width: 100%;
-
-    column-rule: 1px solid lightblue;
-}
-
-ul.nobullet {
-    list-style-type: none;
-}
-
 body {
+    margin-top: 5%;
+    /*font-family: 'Marvel', sans-serif;*/
     background-color: black;
     color: #f5bf42;
+    font-family: 'Quantico', sans-serif;
+
 }
 
 table {
@@ -26,12 +14,29 @@ table {
     text-align: center;
 }
 
-th {
+thead{
     height: 50px;
+    color: black;
+    background-color: #f5bf42;
+    color: black;
+    font-size: large;
+}
+
+tbody{
+    color: black;
+}
+
+th {
     text-align: center;
-    vertical-align: center;
     white-space: nowrap;
-    border-right: 1px solid black;
+    border-right: 1px solid #9c7a2d;
+    border-bottom: 1px solid #9c7a2d;
+}
+
+td {
+    color: black;
+    border-right: 1px solid gray;
+    border-bottom: 1px solid black;
 }
 
 th, td {
@@ -41,24 +46,14 @@ th, td {
     padding-bottom: 1%;
 }
 
-td {
-    color: black;
-    border-right: 1px solid gray;
-    border-top: 1px solid black;
-}
-
-th {
-    background-color: #f5bf42;
-    color: black;
-    font-size: large;
-}
 
 
-tr:nth-child(odd) {
+
+tbody tr:nth-child(odd) {
     background-color: #f2f2f2;
 }
 
-tr:nth-child(even) {
+tbody tr:nth-child(even) {
     background-color: white;
 }
 
@@ -76,10 +71,6 @@ h1 {
 }
 
 
-body {
-    margin-top: 5%;
-    font-family: 'Marvel', sans-serif;
-}
 
 footer {
     text-align: center;
@@ -95,7 +86,7 @@ a:hover {
 }
 
 p {
-    font-family: 'Marvel', sans-serif;
+    /*font-family: 'Marvel', sans-serif;*/
     color: #f5bf42;
 
 }
