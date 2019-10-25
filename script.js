@@ -57,7 +57,7 @@ let app = new Vue({
                         //console.log(response.data.results[i]);
                         //this.planet_list[i].push({name: response.data.results[i].name});
                         this.planet_list.push(response.data.results[i]);
-                        // console.log("planets ", i, this.planet_list[i].name)
+                        console.log("planets ", i, this.planet_list[i].name)
                     }
                     url = response.data.next;
 
