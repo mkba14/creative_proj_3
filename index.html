@@ -1,111 +1,132 @@
 <html>
 
 <head>
-   <link href="https://fonts.googleapis.com/css?family=Londrina+Solid&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css?family=Londrina+Solid&display=swap" rel="stylesheet">
 
-<link href="https://fonts.googleapis.com/css?family=Marvel&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css?family=Marvel&display=swap" rel="stylesheet">
 
     <link rel="stylesheet" href="styles.css">
-    <title></title>
+    <title>Star Wars Planet Data</title>
 </head>
 
 <body>
 
 
+    <center>
+        <div id="app">
+            <div v-if="loading_planets">
+                <h1>
+                    Retrieving The Planets You're Looking For
+                    <br>
+                    <div class="gif">
+                        <iframe src="https://giphy.com/embed/l0HlSHQ6Ym2MLNVOo" width="480" height="360" frameBorder="0" class="giphy-embed" allowFullScreen></iframe>
+                        <p><a href="https://giphy.com/gifs/star-wars-laser-bicycle-l0HlSHQ6Ym2MLNVOo">image via GIPHY</a></p>
+                    </div>
+                </h1>
+            </div>
+            <div v-else>
 
-    <div id="app">
-        <div v-if="loading_planets">
-            <h1>
-                Retrieving The Droids You're Looking For
-                <br>
-                <iframe src="https://giphy.com/embed/l0HlSHQ6Ym2MLNVOo" width="480" height="360" frameBorder="0" class="giphy-embed" allowFullScreen></iframe>
-                <p><a href="https://giphy.com/gifs/star-wars-laser-bicycle-l0HlSHQ6Ym2MLNVOo">via GIPHY</a></p>
+                <h1>
+                    These are the Planets You're Looking For
+                </h1>
+                <iframe src="https://giphy.com/embed/4560Nv2656Gv0Lvp9F" width="480" height="204" frameBorder="0" class="giphy-embed" allowFullScreen></iframe>
+                <p><a href="https://giphy.com/gifs/cinemagraph-4560Nv2656Gv0Lvp9F">via GIPHY</a></p>
 
-            </h1>
-        </div>
-        <div v-else>
-            <h1>
-                These are the Planets You're Looking For
-            </h1>
+                <table>
+                    <thead>
+                        <tr>
+                            <th>Planet</th>
+                            <th><b>Rotation Period</b>
+                                <br>
+                                <i class="small">standard hours</i>
+                            </th>
+                            <th><b>Oribital Period</b>
+                                <br>
+                                <i class="small">standard days</i>
+                            </th>
+                            <th><b>Diameter</b>
+                                <br>
+                                <i class="small">km</i>
+                            </th>
+                            <th><b>Climate</b>
+                            </th>
+                            <th><b>Gravity</b>
+                                <br>
+                                <i class="small">standard Gs</i>
+                            </th>
+                            <th><b>Terrain</b></th>
+                            <th><b>Percentage of Surface Water</b></th>
+                            <th><b>Population</b></th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr v-for="planet in planet_list">
+                            <td>
+                                {{planet.name}}
+                            </td>
+                            <td v-if='planet.rotation_period !== "unknown"'>
+                                {{planet.rotation_period}}
+                            </td>
+                            <td v-else></td>
+                            <td v-if='planet.orbital_period !=="unknown"'>
+                                {{planet.orbital_period}}
+                            </td>
+                            <td v-else></td>
+                            <td v-if='planet.diameter !=="unknown"'>
+                                {{planet.diameter}}
+                            </td>
+                            <td v-else></td>
+                            <td v-if='planet.climate !=="unknown"'>
+                                {{planet.climate}}
+                            </td>
+                            <td v-else></td>
+                            <td v-if='planet.gravity === "N/A"'>
 
+                            </td>
+                            <td v-else-if='planet.gravity !=="unknown"'>
+                                {{planet.gravity}}
 
-
-            <table>
-                <thead>
-                    <tr>
-                    <th>Planet</th>
-                    <th><b>Rotation Period</b>
-                        <br>
-                        <i class="small">standard hours</i>
-                    </th>
-                    <th><b>Oribital Period</b>
-                        <br>
-                        <i class="small">standard days</i>
-                    </th>
-                    <th><b>Diameter</b>
-                        <br>
-                        <i class="small">km</i>
-                    </th>
-                    <th><b>Climate</b>
-                    </th>
-                    <th><b>Gravity</b>
-                        <br>
-                        <i class="small">standard Gs</i>
-                    </th>
-                    <th><b>Terrain</b></th>
-                    <th><b>Percentage of Surface Water</b></th>
-                    <th><b>Population</b></th>
-                    </tr>
-                </thead>
-                <tbody>
-                    <tr v-for="planet in planet_list">
-                        <td>
-                            {{planet.name}}
-                        </td>
-                        <td v-if='planet.rotation_period !== "unknown"'>
-                            {{planet.rotation_period}}
-                        </td>
-                        <td v-else></td>
-                        <td v-if='planet.orbital_period !=="unknown"'>
-                            {{planet.orbital_period}} 
-                        </td>
-                        <td v-else></td>
-                        <td v-if='planet.diameter !=="unknown"'>
-                            {{planet.diameter}}
-                        </td>
-                        <td v-else></td>
-                        <td v-if='planet.climate !=="unknown"'>
-                            {{planet.climate}}
-                        </td>
-                        <td v-else></td>
-                        <td v-if='planet.gravity !=="unknown"'>
-                            {{planet.gravity}}
-                        </td>
-                        <td v-else></td>
-                        <td v-if='planet.terrain !=="unknown"'>
-                            {{planet.terrain}}
-                        </td>
-                        <td v-else></td>
-                        <td v-if='planet.surface_water !=="unknown"'>
-                            {{planet.surface_water}}%
-                        </td>
-                        <td v-else></td>
-                        <td v-if='planet.population ==="unknown"'>
-                        </td>
-                        <td v-else-if='planet.population =="NaN"'>
-                        </td>
-                        <td v-else>
-                            {{planet.population}}
-                        </td>
-                    </tr>
-                </tbody>
-            </table>
-        </div>
+                            </td>
+                            <td v-else></td>
+                            <td v-if='planet.terrain !=="unknown"'>
+                                {{planet.terrain}}
+                            </td>
+                            <td v-else></td>
+                            <td v-if='planet.surface_water !=="unknown"'>
+                                {{planet.surface_water}}%
+                            </td>
+                            <td v-else></td>
+                            <td v-if='planet.population ==="unknown"'>
+                                n/a
+                            </td>
+                            <td v-else-if='planet.population =="NaN"'>
+                                n/a
+                            </td>
+                            <td v-else>
+                                {{planet.population}}
+                            </td>
+                        </tr>
+                    </tbody>
+                </table>
+    </center>
+    </div>
 
     </div>
+
+
     </div>
+    </center>
     <footer>
-        <a href="https://github.com/mkba14/creative_proj_3.git">Github</a>
+        <p class="bottom_comments">
+            All data is retrieved via <a href="https://swapi.co/">SWAPI</a>, an open-source Star Wars API.
+            <br> All gifs are retrieved
+            <a href="https://giphy.com/gifs/star-wars-laser-bicycle-l0HlSHQ6Ym2MLNVOo">via GIPHY</a>
+
+        </p>
+        <br>
+        <a href="https://github.com/mkba14/creative_proj_3.git">
+            See the code for this site via <b>Github</b>
+        </a>
     </footer>
 
     <script src="https://cdn.jsdelivr.net/npm/vue@2.6.2/dist/vue.js"></script>
