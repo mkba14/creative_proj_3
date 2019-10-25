@@ -66,8 +66,9 @@ h1 {
 }
 
 .gif {
-    margin-top: 5%;
-    border-radius: 15px;
+    margin-top: 3%;
+    font-family: 'Quantico', sans-serif;
+    font-size: medium;
 }
 
 
